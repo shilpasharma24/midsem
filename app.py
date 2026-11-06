@@ -51,6 +51,30 @@ except Exception as exc:
 
 st.success(f"Dataset loaded successfully: {len(df):,} movies.")
 
+# SIDEBAR
+st.sidebar.title("🎬 Movie Dashboard")
+
+st.sidebar.write("Welcome to the Movie Analytics Dashboard!")
+
+st.sidebar.divider()
+
+st.sidebar.subheader("About the Dashboard")
+
+st.sidebar.write("""
+This dashboard helps you explore IMDb movie data.
+
+You can:
+- View movie statistics
+- Explore different genres
+- Analyse IMDb ratings
+- Compare ratings and votes
+- Find top-grossing movies
+""")
+
+st.sidebar.divider()
+
+st.sidebar.info("Created as a Midsem Project")
+
 # Section A: dataset loading and initial exploration
 with st.expander("Dataset loading and initial exploration"):
     st.subheader("First 10 records")
@@ -208,3 +232,18 @@ if st.session_state.movie_search_message == "found" and st.session_state.selecte
     detail_cols[3].write("**Countries**\n" + ", ".join(movie.get("countriesOfOrigin") or []))
 elif st.session_state.movie_search_message == "not_found":
     st.info("No movie matched the submitted title, genre, and minimum rating. Try changing your preferences.")
+
+
+# FOOTER
+st.divider()
+
+st.markdown(
+    """
+    <div style="text-align: center; padding: 15px;">
+        <h4>🎬 Movie Analytics Dashboard</h4>
+        <p>Midsem Project | Made by Shilpa</p>
+        <p>Built using Python, Pandas and Streamlit</p>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
