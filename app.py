@@ -73,10 +73,15 @@ You can:
 
 st.sidebar.divider()
 
-st.sidebar.info("Created as a Midsem Project
-By Shilpa Sharma 
+st.sidebar.info("""
+Created as a Midsem Project
+
+By: Shilpa Sharma
+
 PRN: 250200371
-On Date : 6 November 2026")
+
+Date: 6 November 2026
+""")
 
 # Section A: dataset loading and initial exploration
 with st.expander("Dataset loading and initial exploration"):
